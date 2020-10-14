@@ -1,0 +1,37 @@
+spring:
+  datasource:
+#    hikari:
+#      jdbc-url: jdbc:mysql://localhost:3306/jpa_programming?useUnicode=yes&characterEncoding=UTF-8&serverTimezone=Asia/Seoul
+#      username: hayun
+#      password: password
+#      driver-class-name: com.mysql.cj.jdbc.Driver
+
+      driver-class-name: org.h2.Driver
+      url: jdbc:h2:mem:testdb
+      username: sa
+      password:
+
+  h2:
+    console:
+      enabled: true
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+#  datasource:
+
+
+
+logging:
+  level:
+    #    org.hibernate.SQL: DEBUG
+    org.hibernate.type: trace
+
+# docker mysql
+#  datasource:
+#    hikari:
+#      jdbc-url: jdbc:mysql://localhost:3306/covid19_service?useUnicode=yes&characterEncoding=UTF-8&serverTimezone=Asia/Seoul
+#      driver-class-name: com.mysql.cj.jdbc.Driver
+#      username: hayun
+#      password: password
