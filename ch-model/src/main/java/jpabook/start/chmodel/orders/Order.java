@@ -1,5 +1,6 @@
 package jpabook.start.chmodel.orders;
 
+import jpabook.start.chmodel.delivery.Delivery;
 import jpabook.start.chmodel.member.Member;
 import jpabook.start.chmodel.orderitem.OrderItem;
 import lombok.AllArgsConstructor;
@@ -26,6 +27,10 @@ public class Order {
     @JoinColumn(name = "member_id") // 외래키
     private Member member;
 
+    @OneToOne
+    @JoinColumn(name = "delivery_id")
+    private Delivery delivery;
+
     @OneToMany(mappedBy = "order")
     private List<OrderItem> orderItems = new ArrayList<>();
 
@@ -46,6 +51,11 @@ public class Order {
         }
         this.member = member;
         member.getOrders().add(this);
+    }
+
+    public void setDelivery(Delivery delivery) {
+        this.delivery = delivery;
+        delivery.setOrder(this);
     }
 
 }
