@@ -1,5 +1,6 @@
 package jpabook.start.chmodel.category;
 
+import jpabook.start.chmodel.BaseEntity;
 import jpabook.start.chmodel.item.Item;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,7 +15,7 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 @Table(name = "category")
-public class Category {
+public class Category extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

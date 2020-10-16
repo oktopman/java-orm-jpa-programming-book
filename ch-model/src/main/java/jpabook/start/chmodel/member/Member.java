@@ -1,5 +1,6 @@
 package jpabook.start.chmodel.member;
 
+import jpabook.start.chmodel.BaseEntity;
 import jpabook.start.chmodel.orders.Order;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,7 +13,7 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 @Table(name = "member")
-public class Member {
+public class Member extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

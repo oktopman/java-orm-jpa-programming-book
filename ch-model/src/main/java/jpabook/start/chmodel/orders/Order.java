@@ -1,5 +1,6 @@
 package jpabook.start.chmodel.orders;
 
+import jpabook.start.chmodel.BaseEntity;
 import jpabook.start.chmodel.delivery.Delivery;
 import jpabook.start.chmodel.member.Member;
 import jpabook.start.chmodel.orderitem.OrderItem;
@@ -17,7 +18,7 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 @Table(name = "orders")
-public class Order {
+public class Order extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

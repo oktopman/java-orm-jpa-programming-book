@@ -1,5 +1,6 @@
 package jpabook.start.chmodel.item;
 
+import jpabook.start.chmodel.BaseEntity;
 import jpabook.start.chmodel.category.Category;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
@@ -10,9 +11,11 @@ import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
+@Inheritance(strategy = InheritanceType.JOINED)
+@DiscriminatorColumn(name = "dtype")
 @Entity
 @Table(name = "item")
-public class Item {
+public abstract class Item extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

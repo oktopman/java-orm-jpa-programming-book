@@ -1,5 +1,6 @@
 package jpabook.start.chmodel.delivery;
 
+import jpabook.start.chmodel.BaseEntity;
 import jpabook.start.chmodel.orders.Order;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,7 +11,7 @@ import javax.persistence.*;
 @Getter
 @Entity
 @Table(name = "delivery")
-public class Delivery {
+public class Delivery extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
