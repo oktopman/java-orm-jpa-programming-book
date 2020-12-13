@@ -1,5 +1,8 @@
-package jpabook.jpashop.domain;
+package jpabook.jpashop.domain.member;
 
+import jpabook.jpashop.domain.Address;
+import jpabook.jpashop.domain.BaseEntity;
+import jpabook.jpashop.domain.order.Order;
 import lombok.Builder;
 import lombok.Getter;
 
@@ -10,7 +13,7 @@ import java.util.Set;
 @Getter
 @Entity
 @Table(name = "member")
-public class Member {
+public class Member extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

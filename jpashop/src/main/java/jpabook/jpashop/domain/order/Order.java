@@ -1,8 +1,11 @@
-package jpabook.jpashop.domain;
+package jpabook.jpashop.domain.order;
 
+import jpabook.jpashop.domain.member.Member;
+import jpabook.jpashop.domain.delivery.Delivery;
 import lombok.Getter;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Getter
 @Entity
@@ -23,6 +26,8 @@ public class Order {
 
     @Enumerated(EnumType.STRING)
     private OrderType status;
+
+    private LocalDateTime orderDateTime;
 
 
 }
