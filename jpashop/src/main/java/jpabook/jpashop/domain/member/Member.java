@@ -7,7 +7,9 @@ import lombok.Builder;
 import lombok.Getter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Getter
@@ -27,7 +29,7 @@ public class Member extends BaseEntity {
     private Address address;
 
     @OneToMany(mappedBy = "member")
-    private Set<Order> orders = new HashSet<>();
+    private List<Order> orders = new ArrayList<>();
 
     @Builder
     public Member(String name, String phone, Address address) {
