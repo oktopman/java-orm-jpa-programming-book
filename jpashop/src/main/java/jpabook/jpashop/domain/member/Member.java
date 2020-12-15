@@ -5,13 +5,13 @@ import jpabook.jpashop.domain.BaseEntity;
 import jpabook.jpashop.domain.order.Order;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
+@NoArgsConstructor
 @Getter
 @Entity
 @Table(name = "member")
@@ -37,6 +37,10 @@ public class Member extends BaseEntity {
         this.phone = phone;
         this.address = address;
     }
+
+
+    // todo 회원탈퇴
+
 
 
 }
