@@ -21,6 +21,8 @@ public class Member extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String username;
+
     private String name;
 
     private String phone;
@@ -32,12 +34,12 @@ public class Member extends BaseEntity {
     private List<Order> orders = new ArrayList<>();
 
     @Builder
-    public Member(String name, String phone, Address address) {
+    public Member(String username, String name, String phone, Address address) {
+        this.username = username;
         this.name = name;
         this.phone = phone;
         this.address = address;
     }
-
 
     // todo 회원탈퇴
 
