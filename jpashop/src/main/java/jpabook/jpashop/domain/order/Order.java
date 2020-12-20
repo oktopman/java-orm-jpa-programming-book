@@ -1,13 +1,12 @@
 package jpabook.jpashop.domain.order;
 
 import jpabook.jpashop.domain.BaseEntity;
-import jpabook.jpashop.domain.member.Member;
 import jpabook.jpashop.domain.delivery.Delivery;
+import jpabook.jpashop.domain.member.Member;
 import jpabook.jpashop.domain.orderitem.OrderItem;
 import lombok.Getter;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
