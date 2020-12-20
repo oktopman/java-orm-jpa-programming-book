@@ -30,6 +30,9 @@ public class Member extends BaseEntity {
     @Embedded
     private Address address;
 
+    @Enumerated(EnumType.STRING)
+    private MemberStatusType status = MemberStatusType.USE;
+
     @OneToMany(mappedBy = "member")
     private List<Order> orders = new ArrayList<>();
 
@@ -41,8 +44,8 @@ public class Member extends BaseEntity {
         this.address = address;
     }
 
-    // todo 회원탈퇴
-
-
+    public void pauseMember() {
+        this.status = MemberStatusType.PAUSE;
+    }
 
 }

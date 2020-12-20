@@ -3,10 +3,14 @@ package jpabook.jpashop.service;
 import jpabook.jpashop.domain.member.Member;
 import jpabook.jpashop.domain.member.MemberRepository;
 import jpabook.jpashop.web.request.MemberRequest;
+import jpabook.jpashop.web.response.MemberResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityNotFoundException;
 import java.util.Optional;
+
+import static jpabook.jpashop.web.response.MemberResponse.entityToResponse;
 
 @RequiredArgsConstructor
 @Service
@@ -30,7 +34,16 @@ public class MemberService {
         }
     }
 
-    //todo 회원정보조회
+    public MemberResponse getMember(final Long memberId) {
+        Member member = memberRepository.findById(memberId)
+                .orElseThrow(EntityNotFoundException::new);
+        return entityToResponse(member);
+    }
 
-    //todo 회원정지기능
+    public void pauseMember(Long id) {
+        Member member = memberRepository.findById(id)
+                .orElseThrow(EntityNotFoundException::new);
+
+        member.pauseMember();
+    }
 }
