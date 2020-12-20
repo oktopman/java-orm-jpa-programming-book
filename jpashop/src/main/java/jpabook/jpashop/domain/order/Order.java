@@ -1,5 +1,6 @@
 package jpabook.jpashop.domain.order;
 
+import jpabook.jpashop.domain.BaseEntity;
 import jpabook.jpashop.domain.member.Member;
 import jpabook.jpashop.domain.delivery.Delivery;
 import jpabook.jpashop.domain.orderitem.OrderItem;
@@ -12,8 +13,8 @@ import java.util.List;
 
 @Getter
 @Entity
-@Table(name = "member")
-public class Order {
+@Table(name = "order")
+public class Order extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,8 +33,6 @@ public class Order {
 
     @Enumerated(EnumType.STRING)
     private OrderType status;
-
-    private LocalDateTime orderDateTime;
 
     public void setMember(Member member) {
         if (this.member != null)

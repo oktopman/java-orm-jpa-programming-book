@@ -1,6 +1,5 @@
 package jpabook.jpashop.domain.item;
 
-import jpabook.jpashop.domain.itemcatrgory.ItemCategory;
 import lombok.Getter;
 
 import javax.persistence.*;
@@ -24,6 +23,6 @@ public abstract class Item {
 
     private Integer stockQuantity;
 
-    @OneToMany(mappedBy = "item")
-    private List<ItemCategory> itemCategories = new ArrayList<>();
+//    @OneToMany(mappedBy = "item")
+//    private List<ItemCategory> itemCategories = new ArrayList<>();
 }

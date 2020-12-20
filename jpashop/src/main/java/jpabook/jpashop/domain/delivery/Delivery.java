@@ -1,6 +1,7 @@
 package jpabook.jpashop.domain.delivery;
 
 import jpabook.jpashop.domain.Address;
+import jpabook.jpashop.domain.BaseEntity;
 import jpabook.jpashop.domain.order.Order;
 import lombok.Getter;
 
@@ -9,7 +10,7 @@ import javax.persistence.*;
 @Getter
 @Entity
 @Table(name = "delivery")
-public class Delivery {
+public class Delivery extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

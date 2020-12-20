@@ -16,6 +16,7 @@ public class MemberService {
     public void join(MemberRequest request) {
         validationDuplicateMember(request.getUsername());
         Member member = Member.builder()
+                .username(request.getUsername())
                 .name(request.getName())
                 .phone(request.getPhone())
                 .address(request.getAddress()).build();
