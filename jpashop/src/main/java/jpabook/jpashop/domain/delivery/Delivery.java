@@ -23,7 +23,11 @@ public class Delivery extends BaseEntity {
     private Address address;
 
     @Enumerated(EnumType.STRING)
-    private DeliveryStatus status;
+    private DeliveryStatus status = DeliveryStatus.WAITING;
+
+    public Delivery(Address address) {
+        this.address = address;
+    }
 
     public void setOrder(Order order) {
         this.order = order;
